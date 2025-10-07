@@ -12,7 +12,7 @@ def create_blog(request):
         form = BlogForm(request.POST, request.FILES)
         if form.is_valid():
             blog = form.save(commit=False)
-            blog.author = request.user.profile  # ✅ Fix: Assign Profile, not User
+            blog.author = request.user.profile 
             blog.save()
             return redirect('doctor_blogs')
     else:
@@ -23,9 +23,9 @@ def create_blog(request):
 @login_required
 def doctor_blogs(request):
     if not hasattr(request.user, 'profile'):
-        return redirect('dashboard')  # or handle missing profile
+        return redirect('dashboard') 
     
-    blogs = Blog.objects.filter(author=request.user.profile)  # ✅ Fix here
+    blogs = Blog.objects.filter(author=request.user.profile) 
     return render(request, 'blog/doctor_blogs.html', {'blogs': blogs})
 
 

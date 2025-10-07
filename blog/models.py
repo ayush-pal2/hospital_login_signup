@@ -18,7 +18,7 @@ class Blog(models.Model):
     author =models.ForeignKey(Profile,on_delete=models.CASCADE,related_name ='blogs')
     created_at = models.DateTimeField(auto_now_add=True)
     
-    def short_summmary(self):
+    def short_summary(self):
         words = self.summary.split()
         return ' '.join(words[0:15])+('...' if len(words)>15 else '')
     

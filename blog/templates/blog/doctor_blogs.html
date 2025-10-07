@@ -92,7 +92,7 @@
                 {% if blog.image %}
                     <img src="{{ blog.image.url }}" alt="{{ blog.title }}">
                 {% endif %}
-                <p>{{ blog.short_summary }}</p>
+                <p>{{ blog.summary }}</p>
                 <p>
                     Status: 
                     <span class="status {% if not blog.is_draft %}published{% endif %}">
