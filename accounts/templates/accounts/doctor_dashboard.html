@@ -11,11 +11,17 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-success">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">Hospital System</a>
-        <div class="d-flex">
+
+        <div class="d-flex align-items-center">
+            <!-- Blog link -->
+            <a href="{% url 'doctor_blogs' %}" class="btn btn-outline-light btn-sm me-2">Blog</a>
+
+            <!-- Logout button -->
             <a href="{% url 'logout' %}" class="btn btn-outline-light btn-sm">Logout</a>
         </div>
     </div>
 </nav>
+
 
 <div class="container mt-5">
     <div class="row justify-content-center">
